@@ -1,1 +1,86 @@
 
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    padding-bottom: 80px; 
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 { font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 5px; }
+.status-count { color: #ccc; font-size: 14px; }
+
+
+.filters {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.filter-btn {
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+
+.task-item {
+    background: #111;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #ff007f;
+}
+
+.completed { text-decoration: line-through; color: #666; }
+
+.tag {
+    background: #ff007f;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.fab {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #ff007f;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.nav-icon { color: #666; font-size: 20px; text-decoration: none; }
+.nav-icon.active { color: #ff007f; }
