@@ -1,0 +1,15 @@
+name: Pipeline CI Nail Manager
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Etapa 1 - Boas Vindas
+        run: echo "🚀 Iniciando integracao continua..."
+      - name: Etapa 2 - Listar Arquivos
+        run: ls -R
+      - name: Etapa 3 - Executar Script
+        run: |
+          chmod +x ./scripts/validar_projeto.sh
+          ./scripts/validar_projeto.sh
