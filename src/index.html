@@ -3,55 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nails Marci - Gestão Profissional</title>
+    <title>Nails Marci App</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Olá, Juliana!</h1>
-        <div id="contagem" class="status-count">Aguardando ações...</div>
-    </header>
+    <div id="tela-login" class="tela active">
+        <div class="logo-container">
+            <img src="https://i.imgur.com/vHInoF0.png" alt="Logo Nails Marci" class="logo-nails">
+        </div>
+        <h2 class="titulo-login">Login</h2>
+        <div class="input-login">
+            <input type="text" placeholder="Digite seu E-mail">
+            <input type="password" placeholder="Digite sua senha">
+        </div>
+        <button class="btn-entrar" onclick="entrar()">ENTRAR</button>
+        <a href="#" class="link-cadastre" onclick="irParaCadastro()">Cadastre-se</a>
+    </div>
 
-    <main id="conteudo-dinamico">
-        <section id="tela-tarefas" class="tela active">
-            <div class="filters">
-                <button class="filter-btn active">Todas</button>
-                <button class="filter-btn">Estoque</button>
-            </div>
-            <div id="lista-tarefas">
-                <div class="task-item" onclick="toggleTarefa(this)">
-                    <span>Esterilizar alicates (Autoclave)</span>
-                    <span class="tag tag-esterilizacao">Esterilização</span>
+    <div id="tela-cadastro" class="tela escondido">
+        <div class="logo-container">
+            <img src="https://i.imgur.com/vHInoF0.png" alt="Logo Nails Marci" class="logo-nails">
+        </div>
+        <h2 class="titulo-login">Cadastro</h2>
+        <div class="input-login">
+            <input type="text" placeholder="Digite seu E-mail">
+            <input type="password" placeholder="Digite sua senha">
+            <input type="password" placeholder="Confirme sua senha">
+        </div>
+        <button class="btn-entrar" onclick="confirmarCadastro()">CONFIRMAR</button>
+        <br>
+        <a href="#" class="link-cadastre" onclick="irParaLogin()">Login</a>
+    </div>
+
+    <div id="app" class="escondido">
+        <header>
+            <div class="logo-small"><img src="https://i.imgur.com/vHInoF0.png" width="80"></div>
+            <h1 id="saudacao">Olá Juliana! Sua agenda de hoje:</h1>
+            <p id="subtitulo">2 tarefas restantes</p>
+        </header>
+
+        <main>
+            <section id="tela-tasks" class="secao-app active">
+                <div class="filtros-scroll">
+                    <button class="filtro-tag">Atendimento</button>
+                    <button class="filtro-tag">Estoque</button>
+                    <button class="filtro-tag">Esterilização</button>
+                    <button class="filtro-tag">Marketing</button>
                 </div>
-                <div class="task-item" onclick="toggleTarefa(this)">
-                    <span>Repor estoque de Fibra de Vidro</span>
-                    <span class="tag tag-estoque">Estoque</span>
+                <h2 class="sessao-titulo">Lista de Tarefas</h2>
+                <div class="lista-container">
+                    <div class="task-row"><input type="checkbox" checked> <span>Preparar kit da cliente das 14h</span> <span class="badge pink">Atendimento</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Comprar lixa ou Top Coat que acabou</span> <span class="badge pink">Estoque</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Tirar materiais da autoclave</span> <span class="badge pink">Esterilização</span></div>
+                    <div class="task-row"><input type="checkbox"> <span>Postar foto da unha de gel da cliente das 14h</span> <span class="badge pink">Marketing</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Repor fibras de vidro</span> <span class="badge pink">Estoque</span></div>
+                    <div class="task-row"><input type="checkbox"> <span>Realizar teste de curvatura no alongamento</span> <span class="badge pink">Atendimento</span></div>
+                </div>
+            </section>
+
+            <section id="tela-agenda" class="secao-app">
+                <h1 class="titulo-agenda-f">Olá Juliana! Sua Agenda:</h1>
+                <div class="calendario-simulado">
+                    <div class="cal-header"> < Outubro 2023 > </div>
+                    <img src="https://i.imgur.com/G3eN9N6.png" style="width: 100%; border-radius: 10px;">
+                </div>
+                <h2 class="sessao-titulo">Tarefas de (14 de Outubro)</h2>
+                <div class="lista-container">
+                    <div class="task-row"><input type="checkbox" checked> <span>Confirmar agenda de amanhã</span> <span class="badge pink">Marketing</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Limpar o filtro do sugador de pó</span> <span class="badge pink">Estoque</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Gravar vídeo de "antes e depois"</span> <span class="badge pink">Marketing</span></div>
+                    <div class="task-row"><input type="checkbox" checked> <span>Remover esmaltação em gel</span> <span class="badge pink">Atendimento</span></div>
+                </div>
+            </section>
+
+            <section id="tela-relatorio" class="secao-app">
+                <div class="tabs-relatorio">
+                    <button>Hoje</button> <button class="active">Semana</button> <button>Mês</button>
+                </div>
+                <div class="card-metrica">
+                    <p>Sua Semana Atual</p>
+                    <h3>35 tarefas concluídas <span class="check-icon">✔</span></h3>
+                </div>
+                <div class="card-metrica">
+                    <p>Categoria Principal</p>
+                    <h3>Esterilização (100%)</h3>
+                </div>
+                <div class="progresso-container">
+                    <h3>Conclusão por Categoria</h3>
+                    <div class="prog-item"><span>Atendimento 7/8</span> <div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+                    <div class="prog-item"><span>Esterilização 12/12</span> <div class="bar"><div class="fill pink-fill" style="width: 100%;"></div></div></div>
+                    <div class="prog-item"><span>Estoque 3/5</span> <div class="bar"><div class="fill" style="width: 60%;"></div></div></div>
+                    <div class="prog-item"><span>Marketing 13/15</span> <div class="bar"><div class="fill" style="width: 86%;"></div></div></div>
+                </div>
+            </section>
+        </main>
+
+        <div class="fab" onclick="abrirModal()">+</div>
+
+        <div id="modal-add" class="modal escondido">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">X</span>
+                <h3>Adicionar Nova Tarefa</h3>
+                <label>Descrição da Tarefa</label>
+                <input type="text" value="Atendimento Ana Paula às 16h">
+                <label>Categoria</label>
+                <div class="tags-modal">
+                    <span>Atendimento</span> <span>Esterilização</span> <span>Estoque</span> <span>Marketing</span>
+                </div>
+                <div class="modal-btns">
+                    <button class="btn-cancelar" onclick="fecharModal()">CANCELAR</button>
+                    <button class="btn-salvar">SALVAR TAREFA</button>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section id="tela-agenda" class="tela">
-            <h2 class="titulo-tela">Agenda de Hoje 📅</h2>
-            <div class="card-info">14:00 - Cliente: Ana (Manutenção Gel)</div>
-            <div class="card-info">16:30 - Cliente: Carla (Banho de Gel)</div>
-        </section>
-
-        <section id="tela-relatorios" class="tela">
-            <h2 class="titulo-tela">Desempenho 📊</h2>
-            <div class="card-info">Atendimentos: 12/15 concluídos</div>
-            <div class="card-info">Meta de Março: 80% Batida 🚀</div>
-        </section>
-    </main>
-
-    <div class="fab" onclick="adicionarNovaTarefa()">+</div>
-
-    <footer>
-        <a href="#" class="nav-icon active" onclick="navegar('tela-tarefas', this)">📋</a>
-        <a href="#" class="nav-icon" onclick="navegar('tela-agenda', this)">📅</a>
-        <a href="#" class="nav-icon" onclick="navegar('tela-relatorios', this)">📊</a>
-        <a href="#" class="nav-icon" onclick="navegar('tela-perfil', this)">👤</a>
-    </footer>
+        <footer>
+            <button onclick="mudarTela('tela-tasks')">📋</button>
+            <button onclick="mudarTela('tela-agenda')">📅</button>
+            <button onclick="mudarTela('tela-relatorio')">📊</button>
+            <button>👤</button>
+        </footer>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
