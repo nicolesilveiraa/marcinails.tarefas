@@ -1,86 +1,52 @@
+:root {
+    --rosa: #ff007f;
+    --fundo: #121212;
+    --card: #1e1e1e;
+    --texto: #ffffff;
+}
 
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    padding: 20px;
-    padding-bottom: 80px; 
+    padding-bottom: 90px;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
+header { padding: 25px; border-bottom: 1px solid #333; }
+h1 { margin: 0; font-size: 22px; color: var(--rosa); }
+.status-count { color: #888; font-size: 14px; }
+
+/* Lógica de Troca de Telas */
+.tela { display: none; padding: 20px; }
+.tela.active { display: block; animation: fadeIn 0.3s; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.titulo-tela { color: var(--rosa); margin-bottom: 20px; font-size: 18px; }
+
+.task-item, .card-info {
+    background: var(--card); border-radius: 12px;
+    padding: 18px; margin-bottom: 15px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-left: 4px solid var(--rosa);
 }
 
-h1 { font-family: 'Georgia', serif; font-size: 24px; margin-bottom: 5px; }
-.status-count { color: #ccc; font-size: 14px; }
+.task-item.done { opacity: 0.3; text-decoration: line-through; border-left-color: #444; }
 
-
-.filters {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-}
-
-.filter-btn {
-    background: #222;
-    border: 1px solid #444;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-
-.task-item {
-    background: #111;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 4px solid #ff007f;
-}
-
-.completed { text-decoration: line-through; color: #666; }
-
-.tag {
-    background: #ff007f;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 10px;
-}
+.tag { font-size: 10px; padding: 5px 10px; border-radius: 6px; background: #333; color: var(--rosa); }
 
 .fab {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: #ff007f;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+    position: fixed; bottom: 100px; right: 25px;
+    background: var(--rosa); width: 55px; height: 55px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 28px; box-shadow: 0 5px 15px rgba(255, 0, 127, 0.4); cursor: pointer;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #000;
+    position: fixed; bottom: 0; width: 100%; height: 75px;
+    background: #181818; display: flex; justify-content: space-around; align-items: center;
     border-top: 1px solid #333;
-    display: flex;
-    justify-content: space-around;
-    padding: 15px;
 }
-
-.nav-icon { color: #666; font-size: 20px; text-decoration: none; }
-.nav-icon.active { color: #ff007f; }
+.nav-icon { text-decoration: none; font-size: 22px; opacity: 0.3; transition: 0.3s; }
+.nav-icon.active { opacity: 1; transform: scale(1.2); }
