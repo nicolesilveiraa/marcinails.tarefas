@@ -1,53 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nails Marci - Tarefas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
         <h1>Olá, Juliana!</h1>
-        <div class="status-count">2 tarefas restantes hoje</div>
+        <div id="contagem" class="status-count">6 tarefas para hoje</div>
     </header>
 
     <div class="filters">
-        <button class="filter-btn">Atendimento</button>
-        <button class="filter-btn">Esterilização</button>
+        <button class="filter-btn active">Todas</button>
         <button class="filter-btn">Estoque</button>
         <button class="filter-btn">Marketing</button>
     </div>
 
-    <main>
-        <div class="task-item">
+    <main id="lista-tarefas">
+        <div class="task-item" onclick="toggleTarefa(this)">
             <span>Preparar kit da cliente das 14h</span>
-            <span class="tag">Atendimento</span>
+            <span class="tag tag-atendimento">Atendimento</span>
         </div>
-       <div class="task-item">
-            <span>Comprar lixa ou top coat que acabou</span>
-            <span class="tag">Estoque</span>
+        <div class="task-item" onclick="toggleTarefa(this)">
+            <span>Comprar top coat que acabou</span>
+            <span class="tag tag-estoque">Estoque</span>
         </div>
-       <div class="task-item">
+        <div class="task-item" onclick="toggleTarefa(this)">
             <span>Tirar materiais da autoclave</span>
-            <span class="tag">Esterilização</span>
+            <span class="tag tag-esterilizacao">Esterilização</span>
         </div>
-        <div class="task-item">
-            <span>Postar foto da unha de gel da cliente das 14h</span>
-            <span class="tag">Marketing</span>
-        </div>
-       <div class="task-item">
-            <span>Repor fibras de vidro</span>
-            <span class="tag">Estoque</span>
-        </div>
-       <div class="task-item">
-            <span>Realizar teste de curvatura no alongamento</span>
-            <span class="tag">Atendimento</span>
-        </div>
-    </main>
+    </header>
 
-    <div class="fab">+</div>
+    <div class="fab" onclick="adicionarNovaTarefa()">+</div>
 
     <footer>
         <a href="#" class="nav-icon active">📋</a>
@@ -56,5 +43,6 @@
         <a href="#" class="nav-icon">👤</a>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
