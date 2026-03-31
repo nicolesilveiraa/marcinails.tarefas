@@ -15,7 +15,7 @@ A organização segue os padrões de Gerência de Configuração para separar os
 
 /.github/workflows/: Contém os arquivos de automação do pipeline.
 
-/src/: Código-fonte da aplicação (HTML e CSS).
+/src/: Código-fonte da aplicação (HTML, CSS e JavaScript).
 
 /scripts/: Scripts de validação e apoio ao desenvolvimento.
 
@@ -59,7 +59,7 @@ Rastreabilidade: O histórico de commits demonstra todas as refatorações reali
 
 6. Tecnologias Utilizadas:
    
-Interface: HTML5 e CSS3 (Design em Preto e Rosa Vibrante).
+Interface: HTML5, CSS3 e JavaScript (Design em Preto e Rosa Vibrante).
 Automação: Shell Script (Bash).
 Versionamento: Git e GitHub.
 CI/CD: GitHub Actions.
@@ -70,5 +70,5 @@ Equipe do Projeto
 - **Nicole Silveira** — Contribuiu (Pipeline, Protótipo e Gerência de Configuração)
 - **Juliana Palma** — Contribuiu (Requisitos e Planejamento)
 - **Vítor Raniery** — Contribuiu (Documentação Overleaf)
-- **Emmanuel** — Contribuiu (Documentação Técnica)
+- **Emmanuel Souza** — Contribuiu (Documentação Técnica)
 
