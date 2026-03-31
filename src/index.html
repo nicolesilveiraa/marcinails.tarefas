@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nails Marci - Tarefas</title>
+    <title>Nails Marci - Gestão Profissional</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
         <h1>Olá, Juliana!</h1>
-        <div id="contagem" class="status-count">6 tarefas para hoje</div>
+        <div id="contagem" class="status-count">Aguardando ações...</div>
     </header>
 
-    <div class="filters">
-        <button class="filter-btn active">Todas</button>
-        <button class="filter-btn">Estoque</button>
-        <button class="filter-btn">Marketing</button>
-    </div>
+    <main id="conteudo-dinamico">
+        <section id="tela-tarefas" class="tela active">
+            <div class="filters">
+                <button class="filter-btn active">Todas</button>
+                <button class="filter-btn">Estoque</button>
+            </div>
+            <div id="lista-tarefas">
+                <div class="task-item" onclick="toggleTarefa(this)">
+                    <span>Esterilizar alicates (Autoclave)</span>
+                    <span class="tag tag-esterilizacao">Esterilização</span>
+                </div>
+                <div class="task-item" onclick="toggleTarefa(this)">
+                    <span>Repor estoque de Fibra de Vidro</span>
+                    <span class="tag tag-estoque">Estoque</span>
+                </div>
+            </div>
+        </section>
 
-    <main id="lista-tarefas">
-        <div class="task-item" onclick="toggleTarefa(this)">
-            <span>Preparar kit da cliente das 14h</span>
-            <span class="tag tag-atendimento">Atendimento</span>
-        </div>
-        <div class="task-item" onclick="toggleTarefa(this)">
-            <span>Comprar top coat que acabou</span>
-            <span class="tag tag-estoque">Estoque</span>
-        </div>
-        <div class="task-item" onclick="toggleTarefa(this)">
-            <span>Tirar materiais da autoclave</span>
-            <span class="tag tag-esterilizacao">Esterilização</span>
-        </div>
-    </header>
+        <section id="tela-agenda" class="tela">
+            <h2 class="titulo-tela">Agenda de Hoje 📅</h2>
+            <div class="card-info">14:00 - Cliente: Ana (Manutenção Gel)</div>
+            <div class="card-info">16:30 - Cliente: Carla (Banho de Gel)</div>
+        </section>
+
+        <section id="tela-relatorios" class="tela">
+            <h2 class="titulo-tela">Desempenho 📊</h2>
+            <div class="card-info">Atendimentos: 12/15 concluídos</div>
+            <div class="card-info">Meta de Março: 80% Batida 🚀</div>
+        </section>
+    </main>
 
     <div class="fab" onclick="adicionarNovaTarefa()">+</div>
 
     <footer>
-        <a href="#" class="nav-icon active">📋</a>
-        <a href="#" class="nav-icon">📅</a>
-        <a href="#" class="nav-icon">📊</a>
-        <a href="#" class="nav-icon">👤</a>
+        <a href="#" class="nav-icon active" onclick="navegar('tela-tarefas', this)">📋</a>
+        <a href="#" class="nav-icon" onclick="navegar('tela-agenda', this)">📅</a>
+        <a href="#" class="nav-icon" onclick="navegar('tela-relatorios', this)">📊</a>
+        <a href="#" class="nav-icon" onclick="navegar('tela-perfil', this)">👤</a>
     </footer>
 
     <script src="js/script.js"></script>
