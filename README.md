@@ -67,8 +67,8 @@ Prototipação: Figma.
 Gestão de Projeto: Trello com Power-Up
 
 Equipe do Projeto
-- **Nicole Silveira** — Contribuiu (Pipeline, Protótipo e Gerência de Configuração)
-- **Juliana Palma** — Contribuiu (Requisitos e Planejamento)
+- **Nicole Silveira** — Contribuiu (Pipeline, Protótipo, Gerência de Configuração, e auxiliou na criação da documentação.)
+- **Juliana Palma** — Contribuiu (Requisitos,Planejamento, e auxiliou na criação da documentação.)
 - **Vítor Raniery** — Contribuiu (Documentação Overleaf)
-- **Emmanuel Souza** — Contribuiu (Documentação Técnica)
+- **Emmanuel Souza** — Contribuiu (Documentação Técnica, e ajudou na organização das informações do repositório)
 
